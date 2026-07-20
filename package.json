@@ -1,0 +1,21 @@
+{
+  "name": "kiko-coding-tutor",
+  "version": "1.0.0",
+  "description": "KIKO — a cheerful AI coding tutor for ages 5 to 18+, powered by a local Ollama model.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@huggingface/inference": "^4.13.23",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

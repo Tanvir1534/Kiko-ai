@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KIKO — Your Cheerful Coding Buddy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- floating gradient background blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-a"></span>
+    <span class="blob blob-b"></span>
+    <span class="blob blob-c"></span>
+  </div>
+
+  <div class="app">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="avatar-wrap">
+          <!-- KIKO cartoon robot avatar -->
+          <svg class="kiko-avatar" viewBox="0 0 120 120" width="52" height="52" aria-label="KIKO robot mascot">
+            <ellipse cx="60" cy="108" rx="30" ry="6" fill="#00000022"/>
+            <rect x="52" y="8" width="16" height="16" rx="6" fill="#D97757"/>
+            <circle class="antenna-dot" cx="60" cy="8" r="6" fill="#FFB84D"/>
+            <rect x="20" y="26" width="80" height="70" rx="26" fill="#F4F1EA"/>
+            <rect x="20" y="26" width="80" height="70" rx="26" fill="url(#faceGrad)" opacity="0.15"/>
+            <circle class="eye" cx="45" cy="58" r="9" fill="#262624"/>
+            <circle class="eye" cx="75" cy="58" r="9" fill="#262624"/>
+            <circle cx="47.5" cy="55" r="2.4" fill="#F4F1EA"/>
+            <circle cx="77.5" cy="55" r="2.4" fill="#F4F1EA"/>
+            <path d="M44 76 Q60 90 76 76" stroke="#262624" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+            <circle cx="30" cy="65" r="6" fill="#FFC49B"/>
+            <circle cx="90" cy="65" r="6" fill="#FFC49B"/>
+            <rect x="10" y="55" width="8" height="20" rx="4" fill="#D97757"/>
+            <rect x="102" y="55" width="8" height="20" rx="4" fill="#D97757"/>
+            <defs>
+              <linearGradient id="faceGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#D97757"/>
+                <stop offset="1" stop-color="#6EC6CA"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>KIKO</h1>
+          <p>your cheerful coding buddy</p>
+        </div>
+      </div>
+
+      <button id="newChatBtn" class="ghost-btn" title="Start a new conversation">
+        ✨ New chat
+      </button>
+    </header>
+
+    <!-- Age mode selector -->
+    <nav class="age-tabs" id="ageTabs" role="tablist" aria-label="Choose your learning mode">
+      <button class="age-tab" data-age="explorer" role="tab">🧒 Explorer <span>5–8</span></button>
+      <button class="age-tab" data-age="builder" role="tab">🛠️ Builder <span>9–12</span></button>
+      <button class="age-tab active" data-age="creator" role="tab">🚀 Creator <span>13–18</span></button>
+      <button class="age-tab" data-age="mentor" role="tab">🎯 Mentor <span>18+</span></button>
+    </nav>
+
+    <!-- Chat window -->
+    <main class="chat-window glass" id="chatWindow" aria-live="polite">
+      <div class="msg kiko">
+        <div class="msg-avatar">🤖</div>
+        <div class="msg-bubble">
+          <p>Hi, I'm <strong>KIKO</strong>! 👋 Pick your mode above, then ask me anything about coding — or tap a suggestion below to get started.</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Suggested question chips -->
+    <div class="chips-row" id="chipsRow"></div>
+
+    <!-- Input bar -->
+    <form class="input-bar glass" id="chatForm">
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Ask KIKO something about coding..."
+        autocomplete="off"
+        maxlength="600"
+      />
+      <button type="submit" id="sendBtn" aria-label="Send message">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M3 11.5L21 3l-8.5 18-2-8-7.5-1.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      </button>
+    </form>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
